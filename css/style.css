@@ -1,0 +1,234 @@
+@font-face {
+    font-family: 'Google Sans Normal';
+    src: url(./fonts/GoogleSans-Regular.woff) format(woff),
+        url(./fonts/GoogleSans-Regular.woff2) format(woff2),
+        url(./fonts/GoogleSans-Regular.eot) format(eot),
+        url(./fonts/GoogleSans-Regular.ttf) format(ttf);      
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    font-variant: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans Medium';
+    src: url(./fonts/GoogleSans-Medium.woff) format(woff),
+        url(./fonts/GoogleSans-Medium.woff2) format(woff2),
+        url(./fonts/GoogleSans-Medium.eot) format(eot),
+        url(./fonts/GoogleSans-Medium.ttf) format(ttf);      
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    font-variant: normal;
+}
+
+.burger-box {
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    border: 1px solid #fff;
+}
+
+.burger-menu {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 1px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 3px;
+    margin: auto 0;
+    position: relative;
+    transition: all .7s;
+}
+
+.burger-menu::before,
+.burger-menu::after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all .7s;
+}
+
+.burger-box .burger-menu.active {
+    background-color: transparent;
+}
+
+@keyframes rotate-clockworth {
+    0% {transform: rotate(0);}
+    70% {transform: rotate(0);}
+    100% {transform: rotate(45deg);}
+}
+
+@keyframes rotate-counterclockworth {
+    0% {transform: rotate(0);}
+    70% {transform: rotate(0);}
+    100% {transform: rotate(-45deg);}
+}
+
+.burger-menu.active::before {
+    top: 0;
+    animation: rotate-clockworth 1s forwards;
+}
+
+.burger-menu.active::after {
+    top: 0;
+    animation: rotate-counterclockworth 1s forwards;
+}
+
+.burger-menu::before {
+    top: -4px;
+}
+
+.burger-menu::after {
+    top: 4px;
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Google Sans Medium', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+    background-color: #2F2F2F;
+    color: #898989;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.active {
+    color: #fff;
+}
+
+.container {
+    max-width: 1270px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* HEADER */
+
+.header {
+    background-color: #242424;
+    padding: 18px 0;
+    min-height: 80px;
+}
+
+.header__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.header__menu-list {
+    display: flex;
+    position: relative;
+}
+
+.header__menu-item {
+    min-width: 146px;
+    text-align: center;
+    position: relative;
+}
+
+.header__menu-item.active::after {
+    position: absolute;
+    bottom: -31px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: #EC8236;
+}
+
+.header__menu-item--link {
+    transition: color .5s;
+}
+
+.header__menu-item--link.active {
+    color: #fff;
+}
+
+.header__menu-item--link:hover {
+    color: #fff;
+}
+
+.header__profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+}
+
+.header__profile-link {
+    color: #fff;
+}
+
+.header__profile-img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: #242424;
+    padding: 30px 0;
+    min-height: 164px;
+}
+
+.footer__inner {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+
+.footer__inner-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer__social-list {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.footer__social-item {
+}
+.footer__social-item--link {
+}
+.footer__social-item--img {
+}
+.footer__document-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer__document-item {
+}
+.footer__document-item--link {
+}

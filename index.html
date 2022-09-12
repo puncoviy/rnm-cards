@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rick and Morty Characters</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header class="header">
@@ -14,8 +16,8 @@
                     <img class="header__menu-img" src="./img/logo.svg" alt="Global Rank">
                 </a>
                 <ul class="header__menu-list">
-                    <li class="header__menu-item">
-                        <a href="#" class="header__menu-item--link">Турниры</a>
+                    <li class="header__menu-item active">
+                        <a href="#" class="header__menu-item--link active">Турниры</a>
                     </li>
                     <li class="header__menu-item">
                         <a href="#" class="header__menu-item--link">Клубы</a>
@@ -33,32 +35,146 @@
     </header>
 
     <main>
-        <div class="container"></div>
+        <div class="container">
+            <div class="section__header">
+                <img src="./img/section-logo.jpg" alt="Box" class="section__logo">
+                <div class="section__text">
+                    <p class="section__title">Bully Me Now MMA</p>
+                    <div class="section__location">
+                        <p class="section__location-country">Россия</p>
+                        <p class="section__location-city">Ростов-на-Дону</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="section__navigation">
+                <a href="#" class="section__navigation-btn">Вступить в клуб</a>
+                <a href="#" class="section__navigation-link">Информация</a>
+                <a href="#" class="section__navigation-link">Статистика</a>
+                <a href="#" class="section__navigation-link">Участники</a>
+                <a href="#" class="section__navigation-link">Регистрации</a>
+                <a href="#" class="section__navigation-link">Настройки</a>
+            </div> -->
+
+            <!-- <div class="section__cards">
+                <h1 class="visually-hidden">Карточки персонажей Rick and Morty</h1>
+                <h2 class="section__cards-title">Персонажи</h2>
+                <input type="search" name="search" id="search" placeholder="Поиск">
+                <ul class="section__cards-list">
+                    <li class="section__cards-item">
+                        <img class="section__cards-item--img" src="./img/card.jpg" alt="card">
+                        <div class="section__cards-item--box">
+                            <p class="section__cards-item--title">Кириченко Григорий</p>
+                            <p class="section__cards-item--subtitle">Спортсмен</p>
+                        </div>
+                    </li>
+                    <li class="section__cards-item">
+                        <img class="section__cards-item--img" src="./img/card.jpg" alt="card">
+                        <div class="section__cards-item--box">
+                            <p class="section__cards-item--title">Кириченко Григорий</p>
+                            <p class="section__cards-item--subtitle">Спортсмен</p>
+                        </div>
+                    </li>
+                    <li class="section__cards-item">
+                        <img class="section__cards-item--img" src="./img/card.jpg" alt="card">
+                        <div class="section__cards-item--box">
+                            <p class="section__cards-item--title">Кириченко Григорий</p>
+                            <p class="section__cards-item--subtitle">Спортсмен</p>
+                        </div>
+                    </li>
+                    <li class="section__cards-item">
+                        <img class="section__cards-item--img" src="./img/card.jpg" alt="card">
+                        <div class="section__cards-item--box">
+                            <p class="section__cards-item--title">Кириченко Григорий</p>
+                            <p class="section__cards-item--subtitle">Спортсмен</p>
+                        </div>
+                    </li>
+                    <li class="section__cards-item">
+                        <img class="section__cards-item--img" src="./img/card.jpg" alt="card">
+                        <div class="section__cards-item--box">
+                            <p class="section__cards-item--title">Кириченко Григорий</p>
+                            <p class="section__cards-item--subtitle">Спортсмен</p>
+                        </div>
+                    </li>
+                    <li class="section__cards-item">
+                        <img class="section__cards-item--img" src="./img/card.jpg" alt="card">
+                        <div class="section__cards-item--box">
+                            <p class="section__cards-item--title">Кириченко Григорий</p>
+                            <p class="section__cards-item--subtitle">Спортсмен</p>
+                        </div>
+                    </li>
+                    <li class="section__cards-item">
+                        <img class="section__cards-item--img" src="./img/card.jpg" alt="card">
+                        <div class="section__cards-item--box">
+                            <p class="section__cards-item--title">Кириченко Григорий</p>
+                            <p class="section__cards-item--subtitle">Спортсмен</p>
+                        </div>
+                    </li>
+                    <li class="section__cards-item">
+                        <img class="section__cards-item--img" src="./img/card.jpg" alt="card">
+                        <div class="section__cards-item--box">
+                            <p class="section__cards-item--title">Кириченко Григорий</p>
+                            <p class="section__cards-item--subtitle">Спортсмен</p>
+                        </div>
+                    </li>
+                    <li class="section__cards-item">
+                        <img class="section__cards-item--img" src="./img/card.jpg" alt="card">
+                        <div class="section__cards-item--box">
+                            <p class="section__cards-item--title">Кириченко Григорий</p>
+                            <p class="section__cards-item--subtitle">Спортсмен</p>
+                        </div>
+                    </li>
+                    <li class="section__cards-item">
+                        <img class="section__cards-item--img" src="./img/card.jpg" alt="card">
+                        <div class="section__cards-item--box">
+                            <p class="section__cards-item--title">Кириченко Григорий</p>
+                            <p class="section__cards-item--subtitle">Спортсмен</p>
+                        </div>
+                    </li>
+                    <li class="section__cards-item">
+                        <img class="section__cards-item--img" src="./img/card.jpg" alt="card">
+                        <div class="section__cards-item--box">
+                            <p class="section__cards-item--title">Кириченко Григорий</p>
+                            <p class="section__cards-item--subtitle">Спортсмен</p>
+                        </div>
+                    </li>
+                    <li class="section__cards-item">
+                        <img class="section__cards-item--img" src="./img/card.jpg" alt="card">
+                        <div class="section__cards-item--box">
+                            <p class="section__cards-item--title">Кириченко Григорий</p>
+                            <p class="section__cards-item--subtitle">Спортсмен</p>
+                        </div>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
     </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer__inner">
-                <a href="#" class="header__menu-logo">
-                    <img class="header__menu-img" src="./img/logo.svg" alt="Global Rank">
-                </a>
-                <ul class="footer__social-list">
-                    <li class="footer__social-item">
-                        <a href="#" class="footer__social-item--link">
-                            <img src="./img/vk.svg" alt="vkontakte" class="footer__social-item--img">
-                        </a>
-                    </li>
-                    <li class="footer__social-item">
-                        <a href="#" class="footer__social-item--link">
-                            <img src="./img/yt.svg" alt="youtube" class="footer__social-item--img">
-                        </a>
-                    </li>
-                    <li class="footer__social-item">
-                        <a href="#" class="footer__social-item--link">
-                            <img src="./img/inst.svg" alt="instagram" class="footer__social-item--img">
-                        </a>
-                    </li>
-                </ul>
+                <div class="footer__inner-box">
+                    <a href="#" class="header__menu-logo">
+                        <img class="header__menu-img" src="./img/logo.svg" alt="Global Rank">
+                    </a>
+                    <ul class="footer__social-list">
+                        <li class="footer__social-item">
+                            <a href="#" class="footer__social-item--link">
+                                <img src="./img/vk.svg" alt="vkontakte" class="footer__social-item--img">
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="#" class="footer__social-item--link">
+                                <img src="./img/yt.svg" alt="youtube" class="footer__social-item--img">
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="#" class="footer__social-item--link">
+                                <img src="./img/inst.svg" alt="instagram" class="footer__social-item--img">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                 <ul class="footer__document-list">
                     <li class="footer__document-item">
                         <a href="#" class="footer__document-item--link">Политика конфиденциальности</a>

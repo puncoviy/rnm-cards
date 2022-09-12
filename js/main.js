@@ -44,3 +44,15 @@ navLink.forEach (el => el.addEventListener('click', function(event){
     navLink.forEach (el => el.classList.remove('active'));
     el.classList.add('active');
 }))
+
+
+
+
+// fetch('https://rickandmortyapi.com/api/character'
+//     ).then((res) => res.json()
+//     ).then(data => getData(data));
+
+
+// function getData({info, results}) {
+
+// }

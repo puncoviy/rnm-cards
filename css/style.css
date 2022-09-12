@@ -431,10 +431,6 @@ a.active {
     align-items: center;
 }
 
-.footer__social-item--img {
-
-}
-
 .footer__document-list {
     display: flex;
     flex-direction: column;

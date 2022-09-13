@@ -578,6 +578,17 @@ a.active {
     transform: translate(-50%, -50%) rotate(225deg);
 }
 
+/* UNABLE */
+
+.unable {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 30px;
+}
+
 /* FOOTER */
 
 .footer {
@@ -627,6 +638,9 @@ a.active {
     }
     .section__cards-item {
         flex-basis: calc(50% - 10px);
+    }
+    .section__cards-item:nth-last-child(1) {
+        margin-right: unset;
     }
 }
 

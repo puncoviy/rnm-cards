@@ -87,12 +87,36 @@ function getCharacters({info, results}) {
                 newCardSubitle.classList.add('unknown')
             }
             newCardTextBox.appendChild(newCardSubitle);
+
+        let newCardContent = document.createElement('div');
+        newCardContent.classList.add('section__cards-item--content');
+            let newCardContentImg = document.createElement('img');
+            newCardContentImg.classList.add('section__cards-item--content-img');
+            newCardContentImg.src = el.image;
+            newCardContentImg.alt = 'avatar';
+
+            let newCardContentLocation = document.createElement('p');
+            newCardContentLocation.classList.add('section__cards-item--content-text');
+            newCardContentLocation.textContent = 'Last known location:';
+
+            let newCardContentLocationText = document.createElement('p');
+            newCardContentLocationText.classList.add('section__cards-item--content-description');
+            newCardContentLocationText.textContent = el.location.name;
+
+            let newCardContentEpisode = document.createElement('p');
+            newCardContentEpisode.classList.add('section__cards-item--content-text');
+            newCardContentEpisode.textContent = 'First seen in:';
+
+            let newCardContentEpisodeText = document.createElement('p');
+            newCardContentEpisodeText.classList.add('section__cards-item--content-description');
+            fetch(el.episode[0]
+                ).then((res) => res.json()
+                ).then((episode) => newCardContentEpisodeText.textContent = episode.name);
+
+            newCardContent.append(newCardContentImg, newCardContentLocation, newCardContentLocationText, newCardContentEpisode, newCardContentEpisodeText)
         
-        // newCard.textContent = el.id;
         cardsList.appendChild(newCard);
-        newCard.appendChild(newCardIcon);
-        newCard.appendChild(newCardImg);
-        newCard.appendChild(newCardTextBox);
+        newCard.append(newCardIcon, newCardImg, newCardTextBox, newCardContent);
     })
 
     const cards = document.querySelectorAll('.section__cards-item');

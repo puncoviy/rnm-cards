@@ -373,6 +373,8 @@ a.active {
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
+    height: auto;
+    transition: all 1s ease-in;
 }
 
 .section__cards-item {
@@ -506,7 +508,7 @@ a.active {
 .section__cards-item[area-expanded='true'] .section__cards-item--content {
     margin-top: 10px;
     opacity: 1;
-    max-height: 25em;
+    max-height: 50em;
     transition: all 200ms linear;
     will-change: opacity, max-height;
 }

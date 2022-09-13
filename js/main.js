@@ -1,16 +1,8 @@
+// MENU
 const burgerBtn = document.querySelector('.burger-box');
 const burgerIcon = document.querySelector('.burger-menu');
 const menuList = document.querySelector('.header__menu-list');
 const menuLinks = document.querySelectorAll('.header__menu-item');
-
-const profileBtn = document.querySelector('.header__profile');
-const profileIcon = document.querySelector('.header__profile-icon');
-const profileMenu = document.querySelector('.header__profile-link');
-
-const navLink = document.querySelectorAll('.section__navigation-link');
-
-// const cards = document.querySelectorAll('.section__cards-item');
-const cardsList = document.querySelector('.section__cards-list');
 
 burgerBtn.addEventListener('click', function(){
     profileIcon.classList.remove('active');
@@ -25,6 +17,11 @@ menuLinks.forEach (el => el.addEventListener('click', function(){
     burgerIcon.classList.remove('active');
     menuList.classList.remove('active');
 }))
+
+// PROFILE
+const profileBtn = document.querySelector('.header__profile');
+const profileIcon = document.querySelector('.header__profile-icon');
+const profileMenu = document.querySelector('.header__profile-link');
 
 profileBtn.addEventListener('click', function(){
     burgerIcon.classList.remove('active');
@@ -42,6 +39,8 @@ window.addEventListener('scroll', function() {
     }
 })
 
+// NAVIGATION
+const navLink = document.querySelectorAll('.section__navigation-link');
 navLink.forEach (el => el.addEventListener('click', function(event){
     event.preventDefault();
     navLink.forEach (el => el.classList.remove('active'));
@@ -49,10 +48,10 @@ navLink.forEach (el => el.addEventListener('click', function(event){
 }))
 
 
-
-
+// API
+const cardsList = document.querySelector('.section__cards-list');
 let allPages;
-let currentPage;
+let currentPage = 1;
 
 fetch('https://rickandmortyapi.com/api/character'
     ).then((res) => res.json()
@@ -140,6 +139,7 @@ function getCharacters({info, results}) {
     cards.forEach(el => el.addEventListener('click', toggleAccordion));
 }
 
+// PAGES
 const cardPages = document.querySelectorAll('.section__cards-pages-item');
 
 // cardPages.forEach (el => el.addEventListener('click', function(){
@@ -192,6 +192,11 @@ nextPages.addEventListener('click', function(){
         if (el.textContent > allPages) {
             el.classList.add('inactive');
         }
+        if (el.textContent == currentPage) {
+            el.classList.add('active');
+        } else {
+            el.classList.remove('active');
+        }
     })
 })
 
@@ -203,4 +208,11 @@ prevPages.addEventListener('click', function(){
             el.textContent = value - 5;
         });
     }
+    cardPages.forEach (el => {
+        if (el.textContent == currentPage) {
+            el.classList.add('active');
+        } else {
+            el.classList.remove('active');
+        }
+    })
 })

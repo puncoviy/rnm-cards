@@ -463,6 +463,32 @@ a.active {
     font-size: 12px;
     line-height: 15px;
     color: #898989;
+    padding-left: 15px;
+    position: relative;
+}
+
+.section__cards-item--subtitle.alive::before,
+.section__cards-item--subtitle.dead::before,
+.section__cards-item--subtitle.unknown::before {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    left: 0;
+    top: 1px;
+    border-radius: 50%;
+}
+
+.section__cards-item--subtitle.alive::before {
+    background-color: rgb(113, 182, 119);
+}
+
+.section__cards-item--subtitle.dead::before {
+    background-color: rgb(182, 113, 113);
+}
+
+.section__cards-item--subtitle.unknown::before {
+    background-color: #898989;
 }
 
 /* FOOTER */

@@ -48,14 +48,20 @@ navLink.forEach (el => el.addEventListener('click', function(event){
     el.classList.add('active');
 }))
 
+
+
+
+let allPages;
+let currentPage;
+
 fetch('https://rickandmortyapi.com/api/character'
     ).then((res) => res.json()
     ).then((characters) => getCharacters(characters));
 
 
 function getCharacters({info, results}) {
-    console.log(info);
-    console.log(results);
+    allPages = info.pages;
+
     results.forEach(function(el){
         let newCard = document.createElement('li');
         newCard.classList.add('section__cards-item');
@@ -132,18 +138,38 @@ function getCharacters({info, results}) {
     }
     
     cards.forEach(el => el.addEventListener('click', toggleAccordion));
-    console.log(cards)
 }
 
-// function toggleAccordion() {
-//     const cardToggle = this.getAttribute('area-expanded');
-//     for (i = 0; i < cards.length; i++) {
-//       cards[i].setAttribute('area-expanded', 'false');
-//     }
-//     if (cardToggle == 'false') {
-//       this.setAttribute('area-expanded', 'true');
-//     }
-//   }
-  
-// cards.forEach(el => el.addEventListener('click', toggleAccordion));
-// console.log(cards)
+const cardPages = document.querySelectorAll('.section__cards-pages-item');
+
+cardPages.forEach (el => el.addEventListener('click', function(){
+    if (el.textContent <= allPages) {
+        cardPages.forEach (el => el.classList.remove('active'));
+        el.classList.add ('active');
+        currentPage = el.textContent;
+        fetch(`https://rickandmortyapi.com/api/character?page=${currentPage}`
+        ).then((res) => res.json()
+        ).then((characters) => getCharacters(characters));
+    };
+}))
+
+const prevPages = document.querySelector('.section__cards-pages-item-prev');
+const nextPages = document.querySelector('.section__cards-pages-item-next');
+
+nextPages.addEventListener('click', function(){
+    if (cardPages[4].textContent <= allPages) {
+        cardPages.forEach (el => {
+            let value = parseInt(el.textContent,10);
+            el.textContent = value + 5;
+        });
+    }
+})
+
+prevPages.addEventListener('click', function(){
+    if (cardPages[0].textContent >= 6) {
+        cardPages.forEach (el => {
+            let value = parseInt(el.textContent,10);
+            el.textContent = value - 5;
+        });
+    }
+})

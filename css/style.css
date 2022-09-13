@@ -541,6 +541,10 @@ a.active {
     border-bottom: 2px solid #EC8236;
 }
 
+.section__cards-pages-item.inactive {
+    color: #000;
+}
+
 .section__cards-pages-item-prev::before,
 .section__cards-pages-item-next::before {
     position: absolute;

@@ -142,15 +142,40 @@ function getCharacters({info, results}) {
 
 const cardPages = document.querySelectorAll('.section__cards-pages-item');
 
+// cardPages.forEach (el => el.addEventListener('click', function(){
+//     if (el.textContent <= allPages) {
+//         const oldCards = document.querySelectorAll('.section__cards-item');
+//         cardPages.forEach (el => el.classList.remove('active'));
+//         el.classList.add ('active');
+//         currentPage = el.textContent;
+//         fetch(`https://rickandmortyapi.com/api/character?page=${currentPage}`
+//         ).then((res) => res.json()
+//         ).then((characters) => getCharacters(characters));
+//         getCharacters.onload = function() {
+//             oldCards.forEach (el => el.remove());
+//         }
+//     };
+// }))
+
 cardPages.forEach (el => el.addEventListener('click', function(){
+    async function fetchAsyncPages() {
+        const oldCards = document.querySelectorAll('.section__cards-item');
+        const newPage = function() {
+                if (el.textContent <= allPages) {
+                    cardPages.forEach (el => el.classList.remove('active'));
+                    el.classList.add ('active');
+                    currentPage = el.textContent;
+                    fetch(`https://rickandmortyapi.com/api/character?page=${currentPage}`
+                    ).then((res) => res.json()
+                    ).then((characters) => getCharacters(characters));
+                };
+        }
+        await newPage();
+        oldCards.forEach (el => el.remove());
+    }
     if (el.textContent <= allPages) {
-        cardPages.forEach (el => el.classList.remove('active'));
-        el.classList.add ('active');
-        currentPage = el.textContent;
-        fetch(`https://rickandmortyapi.com/api/character?page=${currentPage}`
-        ).then((res) => res.json()
-        ).then((characters) => getCharacters(characters));
-    };
+        fetchAsyncPages();
+    }
 }))
 
 const prevPages = document.querySelector('.section__cards-pages-item-prev');
@@ -163,11 +188,17 @@ nextPages.addEventListener('click', function(){
             el.textContent = value + 5;
         });
     }
+    cardPages.forEach (el => {
+        if (el.textContent > allPages) {
+            el.classList.add('inactive');
+        }
+    })
 })
 
 prevPages.addEventListener('click', function(){
     if (cardPages[0].textContent >= 6) {
         cardPages.forEach (el => {
+            el.classList.remove('inactive');
             let value = parseInt(el.textContent,10);
             el.textContent = value - 5;
         });

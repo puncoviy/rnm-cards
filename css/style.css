@@ -385,6 +385,46 @@ a.active {
     display: flex;
     align-items: center;
     gap: 15px;
+    position: relative;
+}
+
+.section__cards-item .icon {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    width: 22px;
+    height: 22px;
+    border: 2px solid;
+    border-radius: 22px;
+}
+
+.section__cards-item .icon::before,
+.section__cards-item .icon::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 2px;
+    background: #898989;
+    transition: transform .1s linear;
+}
+
+.section__cards-item .icon::before {
+    transform: translate(-50%, -50%);
+}
+
+.section__cards-item .icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.section__cards-item[area-expanded='true'] .icon::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.section__cards-item[area-expanded='true'] .icon::after {
+    transform: translate(-50%, -50%) rotate(135deg);
 }
 
 .section__cards-item--img {

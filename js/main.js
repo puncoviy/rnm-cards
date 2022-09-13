@@ -223,11 +223,17 @@ const sectionCards = document.querySelector('.section__cards');
 const unableScreen = document.querySelector('.unable');
 
 const headerNav = document.querySelectorAll('.header__menu-item');
+const sectionNavigationLink = document.querySelectorAll('.section__navigation-link');
+
 headerNav.forEach(el => el.addEventListener('click', function(){
-    if (headerNav[2].classList.contains('active')) {
+    if (headerNav[2].classList.contains('active') && sectionNavigationLink[2].classList.contains('active')) {
         unableScreen.style.display = 'none';
         sectionNavigation.style.display = 'block';
         sectionCards.style.display = 'block';
+    } else if(headerNav[2].classList.contains('active')) {
+        unableScreen.style.display = 'flex';
+        sectionNavigation.style.display = 'block';
+        sectionCards.style.display = 'none';
     } else {
         unableScreen.style.display = 'flex';
         sectionNavigation.style.display = 'none';
@@ -235,7 +241,6 @@ headerNav.forEach(el => el.addEventListener('click', function(){
     }
 }))
 
-const sectionNavigationLink = document.querySelectorAll('.section__navigation-link');
 sectionNavigationLink.forEach(el => el.addEventListener('click', function(){
     if (sectionNavigationLink[2].classList.contains('active')) {
         unableScreen.style.display = 'none';

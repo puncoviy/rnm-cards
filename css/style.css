@@ -342,6 +342,8 @@ a.active {
 
 .section__cards {
     flex-basis: 938px;
+    position: relative;
+    /* min-height: 800px; */
 }
 
 .section__cards-title {
@@ -370,11 +372,11 @@ a.active {
 
 .section__cards-list {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
-    height: auto;
-    transition: all 1s ease-in;
+    min-height: 592px;
 }
 
 .section__cards-item {
@@ -389,6 +391,10 @@ a.active {
     flex-wrap: wrap;
     align-items: flex-start;
     position: relative;
+}
+
+.section__cards-item:nth-last-child(1) {
+    margin-right: auto;
 }
 
 .section__cards-item .icon {
@@ -518,6 +524,9 @@ a.active {
     justify-content: center;
     gap: 10px;
     margin: 0 auto;
+    position: absolute;
+    top: 70px;
+    right: 0;
 }
 
 .section__cards-pages-item,
@@ -613,6 +622,9 @@ a.active {
 
 
 @media (max-width: 1270px) {
+    .section__cards {
+        flex-basis: unset;
+    }
     .section__cards-item {
         flex-basis: calc(50% - 10px);
     }
@@ -641,6 +653,11 @@ a.active {
     }
     .section__cards-item {
         flex-basis: 100%;
+    }
+    .section__cards-pages {
+        position: relative;
+        top: unset;
+        right: unset;
     }
 }
 

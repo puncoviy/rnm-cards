@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'Google Sans Normal';
-    src: url(./fonts/GoogleSans-Regular.woff) format(woff),
+    src: url(./fonts/GoogleSans-Regular.eot) format(eot),
+        url(./fonts/GoogleSans-Regular.ttf) format(ttf),
         url(./fonts/GoogleSans-Regular.woff2) format(woff2),
-        url(./fonts/GoogleSans-Regular.eot) format(eot),
-        url(./fonts/GoogleSans-Regular.ttf) format(ttf);      
+        url(./fonts/GoogleSans-Regular.woff) format(woff);
     font-weight: 400;
     font-style: normal;
     font-stretch: normal;
@@ -12,10 +12,10 @@
 
 @font-face {
     font-family: 'Google Sans Medium';
-    src: url(./fonts/GoogleSans-Medium.woff) format(woff),
+    src: url(./fonts/GoogleSans-Medium.eot) format(eot),
+        url(./fonts/GoogleSans-Medium.ttf) format(ttf),
         url(./fonts/GoogleSans-Medium.woff2) format(woff2),
-        url(./fonts/GoogleSans-Medium.eot) format(eot),
-        url(./fonts/GoogleSans-Medium.ttf) format(ttf);      
+        url(./fonts/GoogleSans-Medium.woff) format(woff);
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
